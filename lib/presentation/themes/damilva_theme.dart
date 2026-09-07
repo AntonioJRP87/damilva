@@ -5,7 +5,7 @@ import 'package:damilva/presentation/themes/typography/damilva_typography.dart';
 import 'package:damilva/presentation/themes/typography/damilva_typography_extension.dart';
 import 'package:flutter/material.dart';
 
-class SansermonteTheme {
+class DamilvaTheme {
   static ThemeData buildTheme({
     required String fontFamily,
     DamilvaColors? damilvaColors,
