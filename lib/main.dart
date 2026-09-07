@@ -1,3 +1,4 @@
+import 'package:damilva/core/router.dart';
 import 'package:damilva/presentation/l10n/app_localizations.dart';
 import 'package:damilva/presentation/themes/damilva_theme.dart';
 import 'package:flutter/material.dart';
@@ -12,13 +13,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Damilva',
       localizationsDelegates: [
         AppLocalizations.delegate,
         ...GlobalMaterialLocalizations.delegates,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
+      routerConfig: router,
       theme: DamilvaTheme.buildTheme(
         fontFamily: 'Archivo',
         brightness: Brightness.light,
