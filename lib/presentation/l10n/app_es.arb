@@ -1,4 +1,22 @@
 {
     "@@locale": "es",
-    "name_app": "Damilva"
+    "name_app": "Damilva",
+    "unknown": "Error desconocido",
+    "invalid_credentials": "El correo o la constraseña no son correctos",
+    "info_invalid_credentials": "Revísalos e inténtalo de nuevo otra vez. Si no te acuerdas, puedes cambiar la contraseña",
+    "email_in_use": "Ya hay una cuenta con este correo. ¿Quieres iniciar sesión?",
+    "weak_password": "La contraseña necesita al menos 8 caracteres, una mayúscula y un número",
+    "session_expired": "Hemos cerrado tu sesión por seguridad",
+    "info_session_expired": "Vuelve a entrar y seguimos donde lo dejaste: tu carrito sigue intacto.",
+    "too_many_login_attempts": "Has hecho varios intentos seguidos. Prueba de nuevo en 15 minutos",
+    "info_too_many_login_attempts": "Si no recuerdas la contraseña, cámbiala y entras directamente",
+    "required_field": "Campo obligatorio",
+    "duplicate_reference_or_SKU": "Ya existe un producto con esta referencia",
+    "repeated_variant": "Ya hay una variable repetida para este artículo",
+    "product_without_variants_or_image": "Para publicarlo necesita al menos una variante con stock y una imagen",
+    "image_too_large_or_unsupported": "Esta imagen no se puede subir o el formato no está soportado",
+    "no_internet_connection": "Parece que no hay conexión",
+    "info_no_internet_connection": "Comprueba el wifi o los datos y vuelve a intentarlo.",
+    "error_server": "Algo ha fallado por nuestra parte",
+    "info_error_server": "Ya lo estamos mirando. Inténtalo en unos minutos y, si tenías un pedido a medias, escríbenos"
 }
