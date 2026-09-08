@@ -3,8 +3,10 @@ import 'package:damilva/presentation/l10n/app_localizations.dart';
 import 'package:damilva/presentation/themes/damilva_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:damilva/core/di/app_di.dart' as di;
 
-void main() {
+void main() async {
+  await di.init();
   runApp(const MyApp());
 }
 
