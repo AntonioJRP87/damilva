@@ -1,6 +1,6 @@
-import 'package:damilva/core/router.dart';
-import 'package:damilva/presentation/l10n/app_localizations.dart';
-import 'package:damilva/presentation/themes/damilva_theme.dart';
+import 'package:damilva/core/l10n/app_localizations.dart';
+import 'package:damilva/core/router/router.dart';
+import 'package:damilva/core/themes/damilva_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:damilva/core/di/app_di.dart' as di;

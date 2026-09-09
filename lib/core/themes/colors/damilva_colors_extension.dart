@@ -1,4 +1,4 @@
-import 'package:damilva/presentation/themes/colors/damilva_colors.dart';
+import 'package:damilva/core/themes/colors/damilva_colors.dart';
 import 'package:flutter/material.dart';
 
 class DamilvaColorsExtension extends ThemeExtension<DamilvaColorsExtension> {

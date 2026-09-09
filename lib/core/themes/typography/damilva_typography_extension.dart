@@ -1,4 +1,4 @@
-import 'package:damilva/presentation/themes/typography/damilva_typography.dart';
+import 'package:damilva/core/themes/typography/damilva_typography.dart';
 import 'package:flutter/material.dart';
 
 class DamilvaTypographyExtension
