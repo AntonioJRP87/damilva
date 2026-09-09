@@ -1,4 +1,4 @@
-import 'package:damilva/data/errors/generic/generic_error.dart';
+import 'package:damilva/core/errors/generic/generic_error.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'custom_errors.freezed.dart';
