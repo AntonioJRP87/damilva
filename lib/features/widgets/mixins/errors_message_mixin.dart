@@ -1,5 +1,5 @@
 import 'package:damilva/core/extensions/context_extension.dart';
-import 'package:damilva/domain/models/app_error.dart';
+import 'package:damilva/core/errors/app_error.dart';
 import 'package:flutter/material.dart';
 
 mixin ErrorsMessageMixin {

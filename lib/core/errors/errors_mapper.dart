@@ -1,6 +1,6 @@
-import 'package:damilva/data/errors/custom/custom_errors.dart';
-import 'package:damilva/data/errors/generic/generic_error.dart';
-import 'package:damilva/domain/models/app_error.dart';
+import 'package:damilva/core/errors/custom/custom_errors.dart';
+import 'package:damilva/core/errors/generic/generic_error.dart';
+import 'package:damilva/core/errors/app_error.dart';
 
 class ErrorsMapper {
   static AppError mapToError(GenericError error) {
