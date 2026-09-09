@@ -1,6 +1,5 @@
 import 'dart:ui';
-
-import 'package:damilva/presentation/themes/colors/damilva_colors.dart';
+import 'package:damilva/core/themes/colors/damilva_colors.dart';
 
 class DamilvaDefaultColors {
   static DamilvaColors get colors {

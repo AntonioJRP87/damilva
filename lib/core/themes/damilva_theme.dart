@@ -1,8 +1,8 @@
-import 'package:damilva/presentation/themes/colors/damilva_colors.dart';
-import 'package:damilva/presentation/themes/colors/damilva_colors_extension.dart';
-import 'package:damilva/presentation/themes/colors/damilva_default_colors.dart';
-import 'package:damilva/presentation/themes/typography/damilva_typography.dart';
-import 'package:damilva/presentation/themes/typography/damilva_typography_extension.dart';
+import 'package:damilva/core/themes/colors/damilva_colors.dart';
+import 'package:damilva/core/themes/colors/damilva_colors_extension.dart';
+import 'package:damilva/core/themes/colors/damilva_default_colors.dart';
+import 'package:damilva/core/themes/typography/damilva_typography.dart';
+import 'package:damilva/core/themes/typography/damilva_typography_extension.dart';
 import 'package:flutter/material.dart';
 
 class DamilvaTheme {
