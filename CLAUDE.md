@@ -164,6 +164,32 @@ Si Claude Code necesita romper alguna de estas reglas para resolver algo, es se�
 - Page: `<feature>_page.dart`
 - Widgets compartidos: `custom_<nombre>.dart`, ej. `custom_elevated_button.dart`, `custom_linear_progress_indicator.dart`
 
+## Design system
+
+**Breakpoints y medidas responsive**
+- Definidos en `core/utils/sizes.dart` (`AppSizes`, `DeviceType`) y consumidos vía `core/extensions/sizes_extension.dart` (`context.deviceType`, `context.responsiveMargin`, `context.productGridColumns`, `context.isFilterPanelFixed`, `context.headerIconSize`...). No repetir breakpoints ni magic numbers de márgenes/columnas/iconos en las pantallas: siempre a través de este archivo.
+- Móvil (< 600px): 1 columna, márgenes 16px, rejilla de producto a 2 columnas.
+- Tableta (600-1023px): márgenes 24px, rejilla a 3 columnas, filtros en panel desplegable.
+- Escritorio (≥ 1024px): márgenes 40px, contenido máximo 1280px centrado, rejilla a 4 columnas, filtros en columna fija de 260px.
+
+**Estados de interacción (botones)**
+- Reposo: principal con fondo de acento y texto blanco, sin borde. Secundario con borde de 2px tinta y fondo blanco.
+- Sobre él (hover): principal con acento un tono más oscuro. Secundario con fondo tinta al 6%.
+- Pulsado: acento 600, sin desplazamiento ni escala.
+- Foco de teclado: contorno de 2px en acento, separado 2px del control. Nunca el azul por defecto del navegador.
+- Deshabilitado: opacidad 45%, sin cursor de puntero.
+- Cargando: el botón conserva su ancho, cambia el texto por el de progreso y queda deshabilitado. Nunca desaparece ni colapsa.
+- Esta lógica se implementa con `WidgetStateProperty` en el `ButtonStyle` del widget compartido correspondiente (ej. `custom_elevated_button.dart`), no con lógica manual de hover/pressed repetida en cada pantalla.
+
+**Iconografía**
+- Librería: Lucide, trazo de 1.6px, sin relleno. Paquete de pub.dev aún sin decidir — no añadir sin consultar antes (ver regla de dependencias en Stack).
+- Tamaños, ya definidos en `AppSizes`/`sizes_extension.dart`: 24px en cabecera móvil/tableta, 20px en cabecera escritorio (`context.headerIconSize`); 16-18px junto a texto (`AppSizes.iconSizeInlineSmall` / `iconSizeInlineLarge`); 14px dentro de botón (`AppSizes.iconSizeInButton`).
+- El icono hereda el color del texto que acompaña. Solo va en rojo cuando todo el aviso es rojo.
+
+**Alineación**
+- Todo alineado a la izquierda, incluida la etiqueta dentro de un botón ancho: el texto empieza en el borde interior izquierdo y el icono se sitúa a la derecha.
+- Nada centrado, salvo el logotipo en las pantallas de acceso (login/registro).
+
 ## Comandos
 - Analizar código: `flutter analyze`
 - Ejecutar tests: `flutter test`
