@@ -9,6 +9,10 @@ extension SizesExtension on BuildContext {
   int get productGridColumns => AppSizes.productGridColumnsOf(screenWidth);
   bool get isFilterPanelFixed => AppSizes.isFilterPanelFixed(screenWidth);
   double get headerIconSize => AppSizes.headerIconSizeOf(screenWidth);
+  double get buttonHeight => AppSizes.buttonHeightOf(screenWidth);
+  double get buttonPaddingHorizontal =>
+      AppSizes.buttonPaddingHorizontalOf(screenWidth);
+  double get noticeBoxIconSize => AppSizes.noticeBoxIconSizeOf(screenWidth);
 
   bool get isMobile => deviceType == DeviceType.mobile;
   bool get isTablet => deviceType == DeviceType.tablet;

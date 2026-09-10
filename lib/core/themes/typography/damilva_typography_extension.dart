@@ -21,6 +21,7 @@ class DamilvaTypographyExtension
     required this.text10w800caps,
     required this.text14w600,
     required this.text13w600,
+    required this.text12w600,
     required this.text16w400,
     required this.text15w400,
     required this.text14w400,
@@ -55,6 +56,7 @@ class DamilvaTypographyExtension
   // Alerts
   final TextStyle text14w600; // credential error, last units
   final TextStyle text13w600; // same on mobile
+  final TextStyle text12w600; // form field error message
 
   // Body
   final TextStyle text16w400; // highlighted paragraph (Bizum instruction)
@@ -83,6 +85,7 @@ class DamilvaTypographyExtension
       text10w800caps: typo.text10w800caps,
       text14w600: typo.text14w600,
       text13w600: typo.text13w600,
+      text12w600: typo.text12w600,
       text16w400: typo.text16w400,
       text15w400: typo.text15w400,
       text14w400: typo.text14w400,
@@ -111,6 +114,7 @@ class DamilvaTypographyExtension
     TextStyle? text10w800caps,
     TextStyle? text14w600,
     TextStyle? text13w600,
+    TextStyle? text12w600,
     TextStyle? text16w400,
     TextStyle? text15w400,
     TextStyle? text14w400,
@@ -136,6 +140,7 @@ class DamilvaTypographyExtension
       text10w800caps: text10w800caps ?? this.text10w800caps,
       text14w600: text14w600 ?? this.text14w600,
       text13w600: text13w600 ?? this.text13w600,
+      text12w600: text12w600 ?? this.text12w600,
       text16w400: text16w400 ?? this.text16w400,
       text15w400: text15w400 ?? this.text15w400,
       text14w400: text14w400 ?? this.text14w400,
@@ -170,6 +175,7 @@ class DamilvaTypographyExtension
       text10w800caps: TextStyle.lerp(text10w800caps, other.text10w800caps, t)!,
       text14w600: TextStyle.lerp(text14w600, other.text14w600, t)!,
       text13w600: TextStyle.lerp(text13w600, other.text13w600, t)!,
+      text12w600: TextStyle.lerp(text12w600, other.text12w600, t)!,
       text16w400: TextStyle.lerp(text16w400, other.text16w400, t)!,
       text15w400: TextStyle.lerp(text15w400, other.text15w400, t)!,
       text14w400: TextStyle.lerp(text14w400, other.text14w400, t)!,
