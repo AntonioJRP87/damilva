@@ -38,9 +38,7 @@ void main() {
       ),
     );
 
-    final decoratedBox = tester.widget<DecoratedBox>(
-      find.byType(DecoratedBox),
-    );
+    final decoratedBox = tester.widget<DecoratedBox>(find.byType(DecoratedBox));
     final decoration = decoratedBox.decoration as BoxDecoration;
     expect(decoration.color, const Color(0xFFEC3013));
     expect(decoration.border!.top.style, BorderStyle.none);
@@ -49,9 +47,7 @@ void main() {
     expect(text.style?.color, const Color(0xFFFFFFFF));
   });
 
-  testWidgets('outline style has a 2px ink border and no fill', (
-    tester,
-  ) async {
+  testWidgets('outline style has a 2px ink border and no fill', (tester) async {
     await _pumpBadge(
       tester,
       const CustomStatusBadge(
@@ -60,18 +56,14 @@ void main() {
       ),
     );
 
-    final decoratedBox = tester.widget<DecoratedBox>(
-      find.byType(DecoratedBox),
-    );
+    final decoratedBox = tester.widget<DecoratedBox>(find.byType(DecoratedBox));
     final decoration = decoratedBox.decoration as BoxDecoration;
     expect(decoration.color, const Color(0xFFFFFFFF));
     expect(decoration.border!.top.width, 2);
     expect(decoration.border!.top.color, const Color(0xFF201E1D));
   });
 
-  testWidgets('neutral style uses the neutral100 background', (
-    tester,
-  ) async {
+  testWidgets('neutral style uses the neutral100 background', (tester) async {
     await _pumpBadge(
       tester,
       const CustomStatusBadge(
@@ -80,16 +72,12 @@ void main() {
       ),
     );
 
-    final decoratedBox = tester.widget<DecoratedBox>(
-      find.byType(DecoratedBox),
-    );
+    final decoratedBox = tester.widget<DecoratedBox>(find.byType(DecoratedBox));
     final decoration = decoratedBox.decoration as BoxDecoration;
     expect(decoration.color, const Color(0xFFF8F4F4));
   });
 
-  testWidgets('muted reduces the whole badge opacity to 0.55', (
-    tester,
-  ) async {
+  testWidgets('muted reduces the whole badge opacity to 0.55', (tester) async {
     await _pumpBadge(
       tester,
       const CustomStatusBadge(
