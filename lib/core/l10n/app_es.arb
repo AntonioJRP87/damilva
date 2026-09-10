@@ -18,5 +18,12 @@
     "no_internet_connection": "Parece que no hay conexión",
     "info_no_internet_connection": "Comprueba el wifi o los datos y vuelve a intentarlo.",
     "error_server": "Algo ha fallado por nuestra parte",
-    "info_error_server": "Ya lo estamos mirando. Inténtalo en unos minutos y, si tenías un pedido a medias, escríbenos"
+    "info_error_server": "Ya lo estamos mirando. Inténtalo en unos minutos y, si tenías un pedido a medias, escríbenos",
+    "product_badge_new": "Nuevo",
+    "product_badge_offer": "Oferta",
+    "product_badge_sold_out": "Agotado",
+    "wishlist_add": "Añadir a la lista de deseos",
+    "wishlist_remove": "Quitar de la lista de deseos",
+    "snackbar_undo": "Deshacer",
+    "cancel": "Cancelar"
 }

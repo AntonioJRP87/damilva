@@ -146,8 +146,21 @@ Si Claude Code necesita romper alguna de estas reglas para resolver algo, es se�
   Se invocan desde el Bloc como `_loginUseCase.call(...)` (o `_loginUseCase(...)` al ser invocable).
 
 **Capa presentation**
-- Bloc: `<feature>_bloc.dart` (+ `<feature>_event.dart`, `<feature>_state.dart`, con Freezed)
+- Bloc: siempre en su propia carpeta `bloc/`, nunca suelto junto a la page o el widget. Dentro: `<feature>_bloc.dart` (+ `<feature>_event.dart`, `<feature>_state.dart`, con Freezed). Ej. `features/auth/presentation/bloc/auth_bloc.dart`. Esto aplica también a widgets compartidos con estado propio (ver más abajo): `features/widgets/text_fields/bloc/custom_text_field_bloc.dart`.
 - El estado tiene un campo `status` (enum propio del feature: ej. `LoginStatus.initial/loading/success/error`) y un campo `error` de tipo `AppError?`. Se actualiza con `copyWith`.
+- En el constructor, un único `on<XxxEvent>` (el evento sellado del feature, no cada subtipo por separado) que despacha con `switch` a los handlers privados `_onXxx`:
+  ```dart
+  LoginBloc(this._loginUseCase) : super(const LoginState()) {
+    on<LoginEvent>((event, emit) {
+      return switch (event) {
+        UpdateEmail() => _onUpdateEmail(event, emit),
+        UpdatePassword() => _onUpdatePassword(event, emit),
+        Login() => _onLogin(event, emit),
+        ShowPassword() => _onShowPassword(event, emit),
+      };
+    });
+  }
+  ```
 - Los handlers de evento consultan el `Result` devuelto por el caso de uso con `result.isSuccess` / `result.isFailure` / `result.error`:
   ```dart
   Future<void> _onLogin(Login event, Emitter<LoginState> emit) async {
@@ -182,7 +195,8 @@ Si Claude Code necesita romper alguna de estas reglas para resolver algo, es se�
 - Esta lógica se implementa con `WidgetStateProperty` en el `ButtonStyle` del widget compartido correspondiente (ej. `custom_elevated_button.dart`), no con lógica manual de hover/pressed repetida en cada pantalla.
 
 **Iconografía**
-- Librería: Lucide, trazo de 1.6px, sin relleno. Paquete de pub.dev aún sin decidir — no añadir sin consultar antes (ver regla de dependencias en Stack).
+- Librería: Lucide, trazo de 1.6px, sin relleno. Paquete decidido: `lucide_icons_flutter` (`import 'package:lucide_icons_flutter/lucide_icons.dart';`, uso `Icon(LucideIcons.<nombre>)`). Ya está en el `pubspec.yaml`, no hace falta volver a consultarlo.
+- Como los iconos Lucide son solo trazo (sin relleno), un estado "activo" (ej. corazón de wishlist marcado) se distingue por **color**, nunca sustituyendo por una variante rellena.
 - Tamaños, ya definidos en `AppSizes`/`sizes_extension.dart`: 24px en cabecera móvil/tableta, 20px en cabecera escritorio (`context.headerIconSize`); 16-18px junto a texto (`AppSizes.iconSizeInlineSmall` / `iconSizeInlineLarge`); 14px dentro de botón (`AppSizes.iconSizeInButton`).
 - El icono hereda el color del texto que acompaña. Solo va en rojo cuando todo el aviso es rojo.
 
