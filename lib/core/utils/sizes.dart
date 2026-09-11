@@ -67,6 +67,19 @@ abstract class AppSizes {
   static const double confirmationDialogActionSpacing = 8;
   static const double confirmationDialogMaxWidth = 400;
 
+  static const double homeHeroAspectRatioMobile = 16 / 10;
+  static const double homeHeroAspectRatioTablet = 16 / 9;
+  static const double homeHeroAspectRatioDesktop = 21 / 9;
+  static const double homeHeroAutoplaySeconds = 6;
+  static const double homeFeaturedCategoryAspectRatio = 4 / 5;
+  static const double homeSectionSpacing = 32;
+  static const double homeSectionTitleSpacing = 16;
+  static const double homeGridSpacing = 16;
+  static const double homeCarouselDotSize = 8;
+  static const double homeCarouselDotSpacing = 6;
+  static const double homeTrustBarPaddingVertical = 16;
+  static const double homeProductCardTextBlockHeight = 84;
+
   static DeviceType deviceTypeOf(double width) => switch (width) {
     >= AppBreakpoints.desktop => DeviceType.desktop,
     >= AppBreakpoints.tablet => DeviceType.tablet,
@@ -84,6 +97,13 @@ abstract class AppSizes {
         DeviceType.mobile => 2,
         DeviceType.tablet => 3,
         DeviceType.desktop => 4,
+      };
+
+  static double homeHeroAspectRatioOf(double width) =>
+      switch (deviceTypeOf(width)) {
+        DeviceType.mobile => homeHeroAspectRatioMobile,
+        DeviceType.tablet => homeHeroAspectRatioTablet,
+        DeviceType.desktop => homeHeroAspectRatioDesktop,
       };
 
   static bool isFilterPanelFixed(double width) =>

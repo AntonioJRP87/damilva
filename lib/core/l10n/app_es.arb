@@ -25,5 +25,21 @@
     "wishlist_add": "Añadir a la lista de deseos",
     "wishlist_remove": "Quitar de la lista de deseos",
     "snackbar_undo": "Deshacer",
-    "cancel": "Cancelar"
+    "cancel": "Cancelar",
+    "retry": "Reintentar",
+    "home_free_shipping_banner": "Envío gratis a partir de {amount}",
+    "@home_free_shipping_banner": {
+        "placeholders": {
+            "amount": {
+                "type": "String"
+            }
+        }
+    },
+    "home_hero_cta": "Ver ahora",
+    "home_new_arrivals_title": "Novedades",
+    "home_new_arrivals_cta": "Ver todas las novedades",
+    "home_featured_categories_title": "Categorías destacadas",
+    "home_trust_secure_payment": "Pago seguro por Bizum",
+    "home_trust_personal_service": "Atención personalizada",
+    "home_trust_nationwide_shipping": "Envíos a toda España"
 }
