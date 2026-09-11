@@ -13,6 +13,7 @@ extension SizesExtension on BuildContext {
   double get buttonPaddingHorizontal =>
       AppSizes.buttonPaddingHorizontalOf(screenWidth);
   double get noticeBoxIconSize => AppSizes.noticeBoxIconSizeOf(screenWidth);
+  double get homeHeroAspectRatio => AppSizes.homeHeroAspectRatioOf(screenWidth);
 
   bool get isMobile => deviceType == DeviceType.mobile;
   bool get isTablet => deviceType == DeviceType.tablet;

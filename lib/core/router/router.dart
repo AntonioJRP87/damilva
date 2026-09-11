@@ -1,4 +1,4 @@
-import 'package:damilva/features/screens/home/page/home_page.dart';
+import 'package:damilva/features/home/presentation/page/home_page.dart';
 import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
