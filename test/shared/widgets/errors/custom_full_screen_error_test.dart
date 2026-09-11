@@ -46,7 +46,10 @@ void main() {
   ) async {
     await tester.pumpWidget(
       _wrap(
-        CustomFullScreenError(error: const AppError.errorServer(), onRetry: () {}),
+        CustomFullScreenError(
+          error: const AppError.errorServer(),
+          onRetry: () {},
+        ),
       ),
     );
 

@@ -25,9 +25,7 @@ const _content = HomeContent(
 
 void main() {
   test('emits loading then success when the use case succeeds', () async {
-    final bloc = HomeBloc(
-      _FakeGetHomeUseCase(const Result.success(_content)),
-    );
+    final bloc = HomeBloc(_FakeGetHomeUseCase(const Result.success(_content)));
     addTearDown(bloc.close);
 
     final states = <HomeState>[];
@@ -44,7 +42,9 @@ void main() {
 
   test('emits loading then error when the use case fails', () async {
     final bloc = HomeBloc(
-      _FakeGetHomeUseCase(const Result.failure(AppError.noInternetConnection())),
+      _FakeGetHomeUseCase(
+        const Result.failure(AppError.noInternetConnection()),
+      ),
     );
     addTearDown(bloc.close);
 
@@ -61,9 +61,7 @@ void main() {
   });
 
   test('refreshed re-fetches the same way as started', () async {
-    final bloc = HomeBloc(
-      _FakeGetHomeUseCase(const Result.success(_content)),
-    );
+    final bloc = HomeBloc(_FakeGetHomeUseCase(const Result.success(_content)));
     addTearDown(bloc.close);
 
     bloc.add(const HomeEvent.refreshed());

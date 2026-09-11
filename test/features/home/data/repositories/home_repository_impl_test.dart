@@ -33,17 +33,20 @@ const _json = {
 };
 
 void main() {
-  test('maps a successful response to a Result.success with domain data', () async {
-    final repository = HomeRepositoryImpl(
-      _FakeHomeDataSource(response: HomeRemoteEntity.fromJson(_json)),
-    );
+  test(
+    'maps a successful response to a Result.success with domain data',
+    () async {
+      final repository = HomeRepositoryImpl(
+        _FakeHomeDataSource(response: HomeRemoteEntity.fromJson(_json)),
+      );
 
-    final result = await repository.getHome();
+      final result = await repository.getHome();
 
-    expect(result.isSuccess, isTrue);
-    expect(result.data!.freeShippingThreshold, 40);
-    expect(result.data!.carousel.single.title, 'Nueva colección');
-  });
+      expect(result.isSuccess, isTrue);
+      expect(result.data!.freeShippingThreshold, 40);
+      expect(result.data!.carousel.single.title, 'Nueva colección');
+    },
+  );
 
   test('maps a thrown CustomErrors to the matching AppError', () async {
     final repository = HomeRepositoryImpl(
