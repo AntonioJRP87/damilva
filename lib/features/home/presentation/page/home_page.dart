@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => presentationDi<HomeBloc>()..add(const HomeEvent.started()),
-      child: const Scaffold(body: SafeArea(child: _HomeView())),
+      child: const SafeArea(child: _HomeView()),
     );
   }
 }

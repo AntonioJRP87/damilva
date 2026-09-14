@@ -1,7 +1,7 @@
 import 'package:damilva/core/extensions/context_extension.dart';
 import 'package:damilva/core/utils/sizes.dart';
+import 'package:damilva/shared/widgets/icons/custom_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 enum ProductCardBadge { newIn, offer, soldOut }
 
@@ -191,8 +191,8 @@ class _WishlistButton extends StatelessWidget {
           child: SizedBox(
             width: AppSizes.wishlistButtonSize,
             height: AppSizes.wishlistButtonSize,
-            child: Icon(
-              LucideIcons.heart,
+            child: CustomIcon(
+              AppIcon.heart,
               size: AppSizes.wishlistIconSize,
               color: isWishlisted ? colors.primary : colors.ink,
             ),

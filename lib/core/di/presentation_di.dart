@@ -1,3 +1,6 @@
+import 'package:damilva/features/header/domain/usecases/get_categories_use_case.dart';
+import 'package:damilva/features/header/domain/usecases/get_search_suggestions_use_case.dart';
+import 'package:damilva/features/header/presentation/bloc/header_bloc.dart';
 import 'package:damilva/features/home/domain/usecases/get_home_use_case.dart';
 import 'package:damilva/features/home/presentation/bloc/home_bloc.dart';
 import 'package:damilva/shared/widgets/text_fields/bloc/custom_text_field_bloc.dart';
@@ -12,6 +15,14 @@ Future<void> presentationInitDi() async {
     CustomTextFieldValidator?,
     void
   >((validator, _) => CustomTextFieldBloc(validator: validator));
+
+  /// Header
+  presentationDi.registerLazySingleton<HeaderBloc>(
+    () => HeaderBloc(
+      presentationDi<GetCategoriesUseCaseContract>(),
+      presentationDi<GetSearchSuggestionsUseCaseContract>(),
+    ),
+  );
 
   /// Home
   presentationDi.registerFactory<HomeBloc>(

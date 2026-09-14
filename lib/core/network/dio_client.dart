@@ -4,7 +4,7 @@ class DioClient {
   const DioClient._();
 
   static const String _defaultBaseUrl =
-      'https://darkroom-flagman-stiffly.ngrok-free.dev';
+      'https://darkroom-flagman-stiffly.ngrok-free.dev/api/v1';
 
   static Dio create() {
     return Dio(
