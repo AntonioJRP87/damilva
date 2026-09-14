@@ -12,6 +12,11 @@ import 'package:damilva/core/di/app_di.dart' as di;
 import 'package:damilva/core/di/presentation_di.dart';
 import 'package:damilva/core/errors/app_error.dart';
 import 'package:damilva/core/result/result.dart';
+import 'package:damilva/features/header/domain/entities/category.dart';
+import 'package:damilva/features/header/domain/entities/search_suggestion.dart';
+import 'package:damilva/features/header/domain/usecases/get_categories_use_case.dart';
+import 'package:damilva/features/header/domain/usecases/get_search_suggestions_use_case.dart';
+import 'package:damilva/features/header/presentation/bloc/header_bloc.dart';
 import 'package:damilva/features/home/domain/entities/home_content.dart';
 import 'package:damilva/features/home/domain/usecases/get_home_use_case.dart';
 import 'package:damilva/features/home/presentation/bloc/home_bloc.dart';
@@ -26,12 +31,34 @@ class _FakeGetHomeUseCase implements GetHomeUseCaseContract {
   }
 }
 
+class _FakeGetCategoriesUseCase implements GetCategoriesUseCaseContract {
+  @override
+  Future<Result<List<Category>, AppError>> call() async {
+    return const Result.failure(AppError.unknown());
+  }
+}
+
+class _FakeGetSearchSuggestionsUseCase
+    implements GetSearchSuggestionsUseCaseContract {
+  @override
+  Future<Result<List<SearchSuggestion>, AppError>> call(String query) async {
+    return const Result.failure(AppError.unknown());
+  }
+}
+
 void main() {
   testWidgets('App builds without errors', (WidgetTester tester) async {
     await di.init();
     presentationDi.unregister<HomeBloc>();
     presentationDi.registerFactory<HomeBloc>(
       () => HomeBloc(_FakeGetHomeUseCase()),
+    );
+    presentationDi.unregister<HeaderBloc>();
+    presentationDi.registerLazySingleton<HeaderBloc>(
+      () => HeaderBloc(
+        _FakeGetCategoriesUseCase(),
+        _FakeGetSearchSuggestionsUseCase(),
+      ),
     );
 
     await tester.pumpWidget(const MyApp());

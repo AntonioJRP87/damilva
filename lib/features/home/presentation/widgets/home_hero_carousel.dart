@@ -4,8 +4,8 @@ import 'package:damilva/core/extensions/context_extension.dart';
 import 'package:damilva/core/extensions/sizes_extension.dart';
 import 'package:damilva/core/utils/sizes.dart';
 import 'package:damilva/features/home/domain/entities/carousel_slide.dart';
+import 'package:damilva/shared/widgets/icons/custom_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 class HomeHeroCarousel extends StatefulWidget {
   const HomeHeroCarousel({super.key, required this.slides});
@@ -90,7 +90,7 @@ class _HomeHeroCarouselState extends State<HomeHeroCarousel> {
                   bottom: 0,
                   child: Center(
                     child: _HeroArrow(
-                      icon: LucideIcons.chevronLeft,
+                      icon: AppIcon.chevronLeft,
                       onPressed: () => _goTo(
                         (_currentPage - 1 + widget.slides.length) %
                             widget.slides.length,
@@ -104,7 +104,7 @@ class _HomeHeroCarouselState extends State<HomeHeroCarousel> {
                   bottom: 0,
                   child: Center(
                     child: _HeroArrow(
-                      icon: LucideIcons.chevronRight,
+                      icon: AppIcon.chevronRight,
                       onPressed: () =>
                           _goTo((_currentPage + 1) % widget.slides.length),
                     ),
@@ -150,7 +150,7 @@ class _HomeHeroCarouselState extends State<HomeHeroCarousel> {
 class _HeroArrow extends StatelessWidget {
   const _HeroArrow({required this.icon, required this.onPressed});
 
-  final IconData icon;
+  final AppIcon icon;
   final VoidCallback onPressed;
 
   @override
@@ -164,7 +164,7 @@ class _HeroArrow extends StatelessWidget {
         child: SizedBox(
           width: 44,
           height: 44,
-          child: Icon(icon, color: colors.ink),
+          child: CustomIcon(icon, color: colors.ink),
         ),
       ),
     );

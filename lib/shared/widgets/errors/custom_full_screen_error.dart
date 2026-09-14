@@ -2,8 +2,8 @@ import 'package:damilva/core/errors/app_error.dart';
 import 'package:damilva/core/extensions/context_extension.dart';
 import 'package:damilva/core/utils/sizes.dart';
 import 'package:damilva/shared/widgets/buttons/custom_button.dart';
+import 'package:damilva/shared/widgets/icons/custom_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 class CustomFullScreenError extends StatelessWidget {
   const CustomFullScreenError({
@@ -35,8 +35,8 @@ class CustomFullScreenError extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              isNoConnection ? LucideIcons.wifiOff : LucideIcons.circleAlert,
+            CustomIcon(
+              isNoConnection ? AppIcon.wifiOff : AppIcon.circleAlert,
               size: AppSizes.iconSizeInlineLarge * 2,
               color: colors.ink,
             ),
