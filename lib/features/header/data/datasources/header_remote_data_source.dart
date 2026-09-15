@@ -1,4 +1,5 @@
 import 'package:damilva/core/errors/custom/custom_errors.dart';
+import 'package:damilva/core/network/dio_error_resolver.dart';
 import 'package:damilva/features/header/data/datasources/header_data_source.dart';
 import 'package:damilva/features/header/data/models/category_remote_entity.dart';
 import 'package:damilva/features/header/data/models/search_suggestion_remote_entity.dart';
@@ -17,15 +18,7 @@ class HeaderRemoteDataSource implements HeaderDataSourceContract {
           .map((e) => CategoryRemoteEntity.fromJson(e as Map<String, dynamic>))
           .toList();
     } on DioException catch (e) {
-      switch (e.type) {
-        case DioExceptionType.connectionError:
-        case DioExceptionType.connectionTimeout:
-        case DioExceptionType.sendTimeout:
-        case DioExceptionType.receiveTimeout:
-          throw const CustomErrors.noInternetConnection();
-        default:
-          throw const CustomErrors.errorServer();
-      }
+      throw DioErrorResolver.resolve(e);
     } catch (_) {
       throw const CustomErrors.errorServer();
     }
@@ -49,15 +42,7 @@ class HeaderRemoteDataSource implements HeaderDataSourceContract {
           )
           .toList();
     } on DioException catch (e) {
-      switch (e.type) {
-        case DioExceptionType.connectionError:
-        case DioExceptionType.connectionTimeout:
-        case DioExceptionType.sendTimeout:
-        case DioExceptionType.receiveTimeout:
-          throw const CustomErrors.noInternetConnection();
-        default:
-          throw const CustomErrors.errorServer();
-      }
+      throw DioErrorResolver.resolve(e);
     } catch (_) {
       throw const CustomErrors.errorServer();
     }

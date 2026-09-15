@@ -28,4 +28,5 @@ sealed class AppError with _$AppError {
   // Transverse
   const factory AppError.noInternetConnection() = NoInternetConnection;
   const factory AppError.errorServer() = ErrorServer;
+  const factory AppError.pageNotFound() = PageNotFound;
 }

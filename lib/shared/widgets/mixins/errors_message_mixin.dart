@@ -22,6 +22,30 @@ mixin ErrorsMessageMixin {
         localizations.image_too_large_or_unsupported,
       NoInternetConnection() => localizations.no_internet_connection,
       ErrorServer() => localizations.error_server,
+      PageNotFound() => localizations.page_not_found,
+    };
+  }
+
+  /// Second line show below the title, only for the errors that have one in
+  /// the message catalog. Null means the error is title-only.
+  String? errorDetail(BuildContext context, AppError error) {
+    final localizations = context.localizations;
+
+    return switch (error) {
+      InvalidCredentials() => localizations.info_invalid_credentials,
+      SessionExpired() => localizations.info_session_expired,
+      TooManyLoginAttempts() => localizations.info_too_many_login_attempts,
+      NoInternetConnection() => localizations.info_no_internet_connection,
+      ErrorServer() => localizations.info_error_server,
+      PageNotFound() => localizations.info_page_not_found,
+      Unknown() ||
+      EmailInUse() ||
+      WeakPassword() ||
+      RequiredField() ||
+      DuplicateReferenceOrSKU() ||
+      RepeatedVariant() ||
+      ProductWithoutVariantsOrImage() ||
+      ImageTooLargeOrUnsupported() => null,
     };
   }
 }

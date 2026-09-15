@@ -20,9 +20,9 @@ class HeaderMobileMenuPanel extends StatelessWidget {
   final bool isLoggedIn;
   final String? firstName;
 
-  void _navigate(BuildContext context, String path) {
+  void _navigate(BuildContext context, String path, {Object? extra}) {
     context.read<HeaderBloc>().add(const HeaderEvent.mobileMenuClosed());
-    context.go(path);
+    context.go(path, extra: extra);
   }
 
   @override
@@ -82,7 +82,11 @@ class HeaderMobileMenuPanel extends StatelessWidget {
                   for (final category in categories)
                     _MobileMenuLink(
                       label: category.name,
-                      onTap: () => _navigate(context, '/c/${category.id}'),
+                      onTap: () => _navigate(
+                        context,
+                        '/c/${category.id}',
+                        extra: category.name,
+                      ),
                     ),
                   const SizedBox(height: 24),
                   Text(

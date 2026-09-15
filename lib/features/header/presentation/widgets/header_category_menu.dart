@@ -20,7 +20,8 @@ class HeaderCategoryMenu extends StatelessWidget {
       menuChildren: categories
           .map(
             (category) => MenuItemButton(
-              onPressed: () => context.go('/c/${category.id}'),
+              onPressed: () =>
+                  context.go('/c/${category.id}', extra: category.name),
               child: Text(
                 category.name,
                 style: typography.text13w400.copyWith(color: colors.ink),

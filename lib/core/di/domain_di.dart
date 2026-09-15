@@ -1,3 +1,6 @@
+import 'package:damilva/features/category/domain/repositories/category_repository.dart';
+import 'package:damilva/features/category/domain/usecases/get_category_listing_use_case.dart';
+import 'package:damilva/features/category/domain/usecases/get_search_listing_use_case.dart';
 import 'package:damilva/features/header/domain/repositories/header_repository.dart';
 import 'package:damilva/features/header/domain/usecases/get_categories_use_case.dart';
 import 'package:damilva/features/header/domain/usecases/get_search_suggestions_use_case.dart';
@@ -8,6 +11,14 @@ import 'package:get_it/get_it.dart';
 final domainDi = GetIt.I;
 
 Future<void> domainInitDi() async {
+  /// Category
+  domainDi.registerLazySingleton<GetCategoryListingUseCaseContract>(
+    () => GetCategoryListingUseCase(domainDi<CategoryRepositoryContract>()),
+  );
+  domainDi.registerLazySingleton<GetSearchListingUseCaseContract>(
+    () => GetSearchListingUseCase(domainDi<CategoryRepositoryContract>()),
+  );
+
   /// Header
   domainDi.registerLazySingleton<GetCategoriesUseCaseContract>(
     () => GetCategoriesUseCase(domainDi<HeaderRepositoryContract>()),

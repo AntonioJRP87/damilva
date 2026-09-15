@@ -2,8 +2,8 @@
     "@@locale": "es",
     "name_app": "Damilva",
     "unknown": "Error desconocido",
-    "invalid_credentials": "El correo o la constraseña no son correctos",
-    "info_invalid_credentials": "Revísalos e inténtalo de nuevo otra vez. Si no te acuerdas, puedes cambiar la contraseña",
+    "invalid_credentials": "El correo o la contraseña no son correctos",
+    "info_invalid_credentials": "Revísalos e inténtalo otra vez. Si no te acuerdas, puedes cambiar la contraseña.",
     "email_in_use": "Ya hay una cuenta con este correo. ¿Quieres iniciar sesión?",
     "weak_password": "La contraseña necesita al menos 8 caracteres, una mayúscula y un número",
     "session_expired": "Hemos cerrado tu sesión por seguridad",
@@ -19,6 +19,8 @@
     "info_no_internet_connection": "Comprueba el wifi o los datos y vuelve a intentarlo.",
     "error_server": "Algo ha fallado por nuestra parte",
     "info_error_server": "Ya lo estamos mirando. Inténtalo en unos minutos y, si tenías un pedido a medias, escríbenos",
+    "page_not_found": "Esta página no existe",
+    "info_page_not_found": "Puede que la prenda ya no esté disponible o que el enlace esté mal escrito.",
     "product_badge_new": "Nuevo",
     "product_badge_offer": "Oferta",
     "product_badge_sold_out": "Agotado",
@@ -27,6 +29,7 @@
     "snackbar_undo": "Deshacer",
     "cancel": "Cancelar",
     "retry": "Reintentar",
+    "go_home": "Volver al inicio",
     "close": "Cerrar",
     "header_search_hint": "Buscar productos...",
     "header_categories": "Categorías",
@@ -55,5 +58,48 @@
     "home_featured_categories_title": "Categorías destacadas",
     "home_trust_secure_payment": "Pago seguro por Bizum",
     "home_trust_personal_service": "Atención personalizada",
-    "home_trust_nationwide_shipping": "Envíos a toda España"
+    "home_trust_nationwide_shipping": "Envíos a toda España",
+    "apply": "Aplicar",
+    "see_new_arrivals": "Ver novedades",
+    "breadcrumb_home": "Inicio",
+    "category_search_results_title": "Resultados para \"{query}\"",
+    "@category_search_results_title": {
+        "placeholders": {
+            "query": {
+                "type": "String"
+            }
+        }
+    },
+    "category_product_count": "{count, plural, one{{count} producto} other{{count} productos}}",
+    "@category_product_count": {
+        "placeholders": {
+            "count": {
+                "type": "int"
+            }
+        }
+    },
+    "category_filters_title": "Filtros",
+    "category_filter_size": "Talla",
+    "category_filter_color": "Color",
+    "category_filter_price": "Precio",
+    "category_filter_only_in_stock": "Solo con stock",
+    "category_sort_newest_first": "Novedades primero",
+    "category_sort_price_asc": "Precio de menor a mayor",
+    "category_sort_price_desc": "Precio de mayor a menor",
+    "category_load_more": "Cargar más productos",
+    "category_mobile_filter_and_sort": "Filtrar y ordenar",
+    "category_clear_all_filters": "Quitar todos los filtros",
+    "category_empty_search_title": "No hemos encontrado nada para «{query}»",
+    "@category_empty_search_title": {
+        "placeholders": {
+            "query": {
+                "type": "String"
+            }
+        }
+    },
+    "category_empty_search_detail": "Prueba con otra palabra o mira las novedades.",
+    "category_empty_filtered_title": "Con estos filtros no queda ninguna prenda",
+    "category_empty_filtered_detail": "Quita alguno y vuelve a ver el catálogo completo.",
+    "category_empty_category_title": "Todavía no hay nada en esta categoría",
+    "category_empty_category_detail": "Estamos preparando prendas nuevas. Mientras, echa un ojo a las novedades."
 }
