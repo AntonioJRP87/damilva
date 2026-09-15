@@ -11,6 +11,10 @@ import 'package:damilva/features/home/data/datasources/home_data_source.dart';
 import 'package:damilva/features/home/data/datasources/home_remote_data_source.dart';
 import 'package:damilva/features/home/data/repositories/home_repository_impl.dart';
 import 'package:damilva/features/home/domain/repositories/home_repository.dart';
+import 'package:damilva/features/product/data/datasources/product_data_source.dart';
+import 'package:damilva/features/product/data/datasources/product_remote_data_source.dart';
+import 'package:damilva/features/product/data/repositories/product_repository_impl.dart';
+import 'package:damilva/features/product/domain/repositories/product_repository.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -42,5 +46,13 @@ Future<void> dataInitDi() async {
   );
   dataDi.registerLazySingleton<HomeRepositoryContract>(
     () => HomeRepositoryImpl(dataDi<HomeDataSourceContract>()),
+  );
+
+  /// Product
+  dataDi.registerLazySingleton<ProductDataSourceContract>(
+    () => ProductRemoteDataSource(dataDi<Dio>()),
+  );
+  dataDi.registerLazySingleton<ProductRepositoryContract>(
+    () => ProductRepositoryImpl(dataDi<ProductDataSourceContract>()),
   );
 }

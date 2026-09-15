@@ -18,6 +18,10 @@ class CustomErrors with _$CustomErrors implements GenericError, Exception {
   // Checkout
   const factory CustomErrors.requiredField() = RequiredField;
 
+  // Product sheet
+  const factory CustomErrors.productUnavailable() = ProductUnavailable;
+  const factory CustomErrors.insufficientStock() = InsufficientStock;
+
   // Administration panel
   const factory CustomErrors.duplicateReferenceOrSKU() =
       DuplicateReferenceOrSKU;

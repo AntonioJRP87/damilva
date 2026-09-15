@@ -13,6 +13,8 @@ class ErrorsMapper {
         sessionExpired: () => const AppError.sessionExpired(),
         tooManyLoginAttempts: () => const AppError.tooManyLoginAttempts(),
         requiredField: () => const AppError.requiredField(),
+        productUnavailable: () => const AppError.productUnavailable(),
+        insufficientStock: () => const AppError.insufficientStock(),
         duplicateReferenceOrSKU: () => const AppError.duplicateReferenceOrSKU(),
         repeatedVariant: () => const AppError.repeatedVariant(),
         productWithoutVariantsOrImage: () =>

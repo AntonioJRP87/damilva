@@ -17,6 +17,10 @@ sealed class AppError with _$AppError {
   // Checkout
   const factory AppError.requiredField() = RequiredField;
 
+  // Product sheet
+  const factory AppError.productUnavailable() = ProductUnavailable;
+  const factory AppError.insufficientStock() = InsufficientStock;
+
   // Administration panel
   const factory AppError.duplicateReferenceOrSKU() = DuplicateReferenceOrSKU;
   const factory AppError.repeatedVariant() = RepeatedVariant;

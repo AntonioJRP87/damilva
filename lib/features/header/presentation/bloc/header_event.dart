@@ -13,4 +13,6 @@ sealed class HeaderEvent with _$HeaderEvent {
   const factory HeaderEvent.mobileSearchOpened() = HeaderMobileSearchOpened;
   const factory HeaderEvent.mobileSearchClosed() = HeaderMobileSearchClosed;
   const factory HeaderEvent.sessionEnded() = HeaderSessionEnded;
+  const factory HeaderEvent.cartItemsIncremented(int quantity) =
+      HeaderCartItemsIncremented;
 }
