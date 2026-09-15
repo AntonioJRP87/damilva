@@ -1,9 +1,9 @@
+import 'package:damilva/core/enums/product_badge.dart';
 import 'package:damilva/core/extensions/context_extension.dart';
 import 'package:damilva/core/extensions/sizes_extension.dart';
 import 'package:damilva/core/utils/currency_formatter.dart';
 import 'package:damilva/core/utils/sizes.dart';
 import 'package:damilva/features/home/domain/entities/home_product.dart';
-import 'package:damilva/features/home/domain/enums/product_badge.dart';
 import 'package:damilva/shared/widgets/product_cards/custom_product_card.dart';
 import 'package:flutter/material.dart';
 

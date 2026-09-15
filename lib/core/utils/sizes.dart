@@ -80,6 +80,24 @@ abstract class AppSizes {
   static const double homeTrustBarPaddingVertical = 16;
   static const double homeProductCardTextBlockHeight = 84;
 
+  static const double categorySectionSpacing = 24;
+  static const double categoryBreadcrumbSpacing = 16;
+  static const double categoryHeaderSpacing = 8;
+  static const double categoryGridSpacing = 16;
+  static const double categoryProductCardTextBlockHeight = 84;
+  static const double categoryFilterPanelSpacing = 24;
+  static const double categoryFilterGroupSpacing = 12;
+  static const double categoryFilterOptionSpacing = 8;
+  static const double categoryChipPaddingHorizontal = 12;
+  static const double categoryChipPaddingVertical = 8;
+  static const double categoryChipSpacing = 8;
+  static const double categoryChipBorderWidth = 1;
+  static const double categoryChipBorderWidthSelected = 2;
+  static const double categoryChipBorderAlpha = 0.4;
+  static const double categoryLoadMoreSpacing = 32;
+  static const double categoryMobilePanelPadding = 16;
+  static const double categoryEmptyStateSpacing = 16;
+
   static DeviceType deviceTypeOf(double width) => switch (width) {
     >= AppBreakpoints.desktop => DeviceType.desktop,
     >= AppBreakpoints.tablet => DeviceType.tablet,

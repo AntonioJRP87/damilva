@@ -1,4 +1,4 @@
-import 'package:damilva/features/home/domain/enums/product_badge.dart';
+import 'package:damilva/core/enums/product_badge.dart';
 
 class HomeProduct {
   const HomeProduct({

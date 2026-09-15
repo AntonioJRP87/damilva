@@ -71,4 +71,48 @@ void main() {
     await tester.tap(find.byType(CustomButton));
     expect(pressed, isTrue);
   });
+
+  testWidgets('shows the page-not-found message with its own text', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      _wrap(
+        CustomFullScreenError(
+          error: const AppError.pageNotFound(),
+          onRetry: () {},
+        ),
+      ),
+    );
+
+    expect(find.text('Esta página no existe'), findsOneWidget);
+  });
+
+  testWidgets(
+    'offers "Volver al inicio" instead of retry for a page-not-found error '
+    'when onGoHome is provided',
+    (tester) async {
+      var wentHome = false;
+      var retried = false;
+
+      await tester.pumpWidget(
+        _wrap(
+          CustomFullScreenError(
+            error: const AppError.pageNotFound(),
+            onRetry: () => retried = true,
+            onGoHome: () => wentHome = true,
+          ),
+        ),
+      );
+
+      final goHomeLabel = find.descendant(
+        of: find.byKey(const ValueKey('custom_button_visible_content')),
+        matching: find.text('VOLVER AL INICIO'),
+      );
+      expect(goHomeLabel, findsOneWidget);
+
+      await tester.tap(find.byType(CustomButton));
+      expect(wentHome, isTrue);
+      expect(retried, isFalse);
+    },
+  );
 }

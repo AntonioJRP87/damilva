@@ -30,4 +30,5 @@ class CustomErrors with _$CustomErrors implements GenericError, Exception {
   // Transverse
   const factory CustomErrors.noInternetConnection() = NoInternetConnection;
   const factory CustomErrors.errorServer() = ErrorServer;
+  const factory CustomErrors.pageNotFound() = PageNotFound;
 }

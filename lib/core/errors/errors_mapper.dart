@@ -21,6 +21,7 @@ class ErrorsMapper {
             const AppError.imageTooLargeOrUnsupported(),
         noInternetConnection: () => const AppError.noInternetConnection(),
         errorServer: () => const AppError.errorServer(),
+        pageNotFound: () => const AppError.pageNotFound(),
       );
     }
     return const AppError.unknown();

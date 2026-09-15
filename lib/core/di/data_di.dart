@@ -1,4 +1,8 @@
 import 'package:damilva/core/network/dio_client.dart';
+import 'package:damilva/features/category/data/datasources/category_data_source.dart';
+import 'package:damilva/features/category/data/datasources/category_remote_data_source.dart';
+import 'package:damilva/features/category/data/repositories/category_repository_impl.dart';
+import 'package:damilva/features/category/domain/repositories/category_repository.dart';
 import 'package:damilva/features/header/data/datasources/header_data_source.dart';
 import 'package:damilva/features/header/data/datasources/header_remote_data_source.dart';
 import 'package:damilva/features/header/data/repositories/header_repository_impl.dart';
@@ -15,6 +19,14 @@ final dataDi = GetIt.I;
 Future<void> dataInitDi() async {
   /// Core
   dataDi.registerLazySingleton<Dio>(DioClient.create);
+
+  /// Category
+  dataDi.registerLazySingleton<CategoryDataSourceContract>(
+    () => CategoryRemoteDataSource(dataDi<Dio>()),
+  );
+  dataDi.registerLazySingleton<CategoryRepositoryContract>(
+    () => CategoryRepositoryImpl(dataDi<CategoryDataSourceContract>()),
+  );
 
   /// Header
   dataDi.registerLazySingleton<HeaderDataSourceContract>(
