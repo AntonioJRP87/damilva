@@ -1,3 +1,4 @@
+import 'package:damilva/core/cart/cart_badge_controller.dart';
 import 'package:damilva/core/errors/app_error.dart';
 import 'package:damilva/core/result/result.dart';
 import 'package:damilva/features/header/domain/entities/category.dart';
@@ -47,6 +48,7 @@ HeaderBloc _buildBloc({
     _FakeGetSearchSuggestionsUseCase(
       suggestionsResult ?? const Result.success(_suggestions),
     ),
+    CartBadgeController(),
   );
 }
 

@@ -98,6 +98,29 @@ abstract class AppSizes {
   static const double categoryMobilePanelPadding = 16;
   static const double categoryEmptyStateSpacing = 16;
 
+  static const double productGalleryAspectRatio = 4 / 5;
+  static const double productGallerySpacing = 12;
+  static const double productThumbnailSize = 72;
+  static const double productThumbnailBorderWidth = 2;
+  static const double productColumnSpacing = 40;
+  static const double productContentSpacing = 16;
+  static const double productSectionSpacing = 32;
+  static const double productSelectorSpacing = 12;
+  static const double productSwatchSize = 36;
+  static const double productSwatchBorderWidth = 1;
+  static const double productSwatchBorderWidthSelected = 2;
+  static const double productSwatchInnerPadding = 3;
+  static const double productChipPaddingHorizontal = 16;
+  static const double productChipPaddingVertical = 10;
+  static const double productQuantityButtonSize = 40;
+  static const double productDiscountBadgePaddingHorizontal = 8;
+  static const double productDiscountBadgePaddingVertical = 4;
+  static const double productAccordionDividerAlpha = 0.15;
+  static const double productAccordionPaddingVertical = 16;
+  static const double productRelatedCardTextBlockHeight = 84;
+  static const double productLoadingTextLineHeight = 16;
+  static const double productLoadingTextLineSpacing = 8;
+
   static DeviceType deviceTypeOf(double width) => switch (width) {
     >= AppBreakpoints.desktop => DeviceType.desktop,
     >= AppBreakpoints.tablet => DeviceType.tablet,

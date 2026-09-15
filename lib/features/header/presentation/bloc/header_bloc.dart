@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:damilva/core/cart/cart_badge_controller.dart';
 import 'package:damilva/features/header/domain/usecases/get_categories_use_case.dart';
 import 'package:damilva/features/header/domain/usecases/get_search_suggestions_use_case.dart';
 import 'package:damilva/features/header/presentation/bloc/header_event.dart';
@@ -7,8 +10,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 const _searchSuggestionsMinQueryLength = 3;
 
 class HeaderBloc extends Bloc<HeaderEvent, HeaderState> {
-  HeaderBloc(this._getCategoriesUseCase, this._getSearchSuggestionsUseCase)
-    : super(const HeaderState()) {
+  HeaderBloc(
+    this._getCategoriesUseCase,
+    this._getSearchSuggestionsUseCase,
+    CartBadgeController cartBadgeController,
+  ) : super(const HeaderState()) {
     on<HeaderEvent>((event, emit) {
       return switch (event) {
         HeaderStarted() => _onStarted(emit),
@@ -19,12 +25,23 @@ class HeaderBloc extends Bloc<HeaderEvent, HeaderState> {
         HeaderMobileSearchOpened() => _onMobileSearchOpened(emit),
         HeaderMobileSearchClosed() => _onMobileSearchClosed(emit),
         HeaderSessionEnded() => _onSessionEnded(emit),
+        HeaderCartItemsIncremented() => _onCartItemsIncremented(event, emit),
       };
     });
+    _cartBadgeSubscription = cartBadgeController.itemsAdded.listen(
+      (quantity) => add(HeaderEvent.cartItemsIncremented(quantity)),
+    );
   }
 
   final GetCategoriesUseCaseContract _getCategoriesUseCase;
   final GetSearchSuggestionsUseCaseContract _getSearchSuggestionsUseCase;
+  late final StreamSubscription<int> _cartBadgeSubscription;
+
+  @override
+  Future<void> close() {
+    _cartBadgeSubscription.cancel();
+    return super.close();
+  }
 
   Future<void> _onStarted(Emitter<HeaderState> emit) async {
     final result = await _getCategoriesUseCase();
@@ -76,5 +93,12 @@ class HeaderBloc extends Bloc<HeaderEvent, HeaderState> {
 
   void _onSessionEnded(Emitter<HeaderState> emit) {
     emit(state.copyWith(isLoggedIn: false, firstName: null));
+  }
+
+  void _onCartItemsIncremented(
+    HeaderCartItemsIncremented event,
+    Emitter<HeaderState> emit,
+  ) {
+    emit(state.copyWith(cartItemsCount: state.cartItemsCount + event.quantity));
   }
 }

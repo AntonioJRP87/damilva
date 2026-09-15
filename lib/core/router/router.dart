@@ -2,6 +2,7 @@ import 'package:damilva/features/category/presentation/page/category_list_page.d
 import 'package:damilva/features/category/presentation/utils/category_filter_query.dart';
 import 'package:damilva/features/header/presentation/widgets/app_shell.dart';
 import 'package:damilva/features/home/presentation/page/home_page.dart';
+import 'package:damilva/features/product/presentation/page/product_page.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
@@ -31,6 +32,13 @@ final router = GoRouter(
               state.uri.queryParameters,
             ),
           ),
+        ),
+        GoRoute(
+          path: '/p/:id',
+          builder: (context, state) {
+            final id = state.pathParameters['id']!;
+            return ProductPage(key: ValueKey(id), productId: id);
+          },
         ),
       ],
     ),

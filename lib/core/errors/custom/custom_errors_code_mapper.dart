@@ -4,6 +4,8 @@ extension CustomErrorsCodeMapper on CustomErrors {
   static CustomErrors? fromCode(String? code) {
     return switch (code) {
       'SYS-01' => const CustomErrors.pageNotFound(),
+      'CAT-06' => const CustomErrors.productUnavailable(),
+      'CAR-04' => const CustomErrors.insufficientStock(),
       _ => null,
     };
   }

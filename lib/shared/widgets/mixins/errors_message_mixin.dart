@@ -14,6 +14,8 @@ mixin ErrorsMessageMixin {
       SessionExpired() => localizations.session_expired,
       TooManyLoginAttempts() => localizations.too_many_login_attempts,
       RequiredField() => localizations.required_field,
+      ProductUnavailable() => localizations.product_unavailable_title,
+      InsufficientStock() => localizations.product_quantity_adjusted,
       DuplicateReferenceOrSKU() => localizations.duplicate_reference_or_SKU,
       RepeatedVariant() => localizations.repeated_variant,
       ProductWithoutVariantsOrImage() =>
@@ -26,8 +28,6 @@ mixin ErrorsMessageMixin {
     };
   }
 
-  /// Second line show below the title, only for the errors that have one in
-  /// the message catalog. Null means the error is title-only.
   String? errorDetail(BuildContext context, AppError error) {
     final localizations = context.localizations;
 
@@ -42,6 +42,8 @@ mixin ErrorsMessageMixin {
       EmailInUse() ||
       WeakPassword() ||
       RequiredField() ||
+      ProductUnavailable() ||
+      InsufficientStock() ||
       DuplicateReferenceOrSKU() ||
       RepeatedVariant() ||
       ProductWithoutVariantsOrImage() ||

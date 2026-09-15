@@ -101,5 +101,33 @@
     "category_empty_filtered_title": "Con estos filtros no queda ninguna prenda",
     "category_empty_filtered_detail": "Quita alguno y vuelve a ver el catálogo completo.",
     "category_empty_category_title": "Todavía no hay nada en esta categoría",
-    "category_empty_category_detail": "Estamos preparando prendas nuevas. Mientras, echa un ojo a las novedades."
+    "category_empty_category_detail": "Estamos preparando prendas nuevas. Mientras, echa un ojo a las novedades.",
+    "product_vat_included": "IVA incluido",
+    "product_size_guide_link": "Consultar guía de tallas",
+    "product_size_note": "La talla L aparece tachada: sin stock en este color.",
+    "product_low_stock_warning": "¡Últimas unidades! Quedan {count} en talla {size}",
+    "@product_low_stock_warning": {
+        "placeholders": {
+            "count": {
+                "type": "int"
+            },
+            "size": {
+                "type": "String"
+            }
+        }
+    },
+    "product_add_to_cart": "Añadir al carrito",
+    "product_choose_size_to_continue": "Elige talla para continuar",
+    "product_shipping_estimate": "Envío en 24-48h",
+    "product_shipping_info_link": "Ver información de envíos y devoluciones",
+    "product_section_description": "Descripción",
+    "product_section_composition": "Composición y cuidados",
+    "product_section_returns": "Devoluciones",
+    "product_related_title": "También te puede gustar",
+    "product_added_to_cart_message": "Añadido al carrito",
+    "product_view_cart": "Ver carrito",
+    "product_notify_when_back": "Avísame si vuelve",
+    "product_unavailable_title": "Esta prenda ya no está en la tienda",
+    "product_back_to_category": "Volver a la categoría",
+    "product_quantity_adjusted": "Hemos ajustado la cantidad a las unidades disponibles"
 }

@@ -8,6 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:damilva/core/cart/cart_badge_controller.dart';
 import 'package:damilva/core/di/app_di.dart' as di;
 import 'package:damilva/core/di/presentation_di.dart';
 import 'package:damilva/core/errors/app_error.dart';
@@ -58,6 +59,7 @@ void main() {
       () => HeaderBloc(
         _FakeGetCategoriesUseCase(),
         _FakeGetSearchSuggestionsUseCase(),
+        presentationDi<CartBadgeController>(),
       ),
     );
 
